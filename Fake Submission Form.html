@@ -1,0 +1,68 @@
+<html>
+<head><title>Duplicate Submission Form</title>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla Farms</title>
+    <h1 align="center" style="color:blue;">Vanilla Farms</h1><hr>
+    <script>
+        function validateForm() {
+            const firstName = document.getElementById("firstName").value;
+            const lastName = document.getElementById("lastName").value;
+            const motherName = document.getElementById("motherName").value;
+            const fatherName = document.getElementById("fatherName").value;
+            const dob = document.getElementById("dob").value;
+            const gender = document.querySelector('input[name="gender"]:checked');
+            const country = document.getElementById("country").value;
+            const mobile = document.getElementById("mobile").value;
+            const email = document.getElementById("email").value;
+
+            if (!firstName || !lastName || !motherName || !fatherName || !dob || !gender || !country || !mobile || !email) {
+                alert("Fill the form Please");
+                return false;
+            } else {
+                alert("Thank You for Submitting");
+                document.getElementById("myForm").reset();
+                return false; // Prevents actual form submission for demonstration purposes
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form id="myForm" onsubmit="return validateForm()">
+        <label for="firstName">First Name:</label><br>
+        <input type="text" id="firstName" name="firstName" required autocomplete="off"><br><br>
+
+        <label for="lastName">Last Name:</label><br>
+        <input type="text" id="lastName" name="lastName" required autocomplete="off"><br><br>
+
+        <label for="motherName">Mother's Name:</label><br>
+        <input type="text" id="motherName" name="motherName" required autocomplete="off"><br><br>
+
+        <label for="fatherName">Father's Name:</label><br>
+        <input type="text" id="fatherName" name="fatherName" required autocomplete="off"><br><br>
+
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" name="dob" required><br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="Male" required>
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="Female" required>
+        <label for="female">Female</label><br><br>
+
+        <label for="country">Country:</label><br>
+        <select id="country" name="country" required>
+            <option value="India">India</option>
+        </select><br><br>
+
+        <label for="mobile">Mobile No.:</label><br>
+        <input type="tel" id="mobile" name="mobile" required autocomplete="off"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required autocomplete="off"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</head>
+</html>
